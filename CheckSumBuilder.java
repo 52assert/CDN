@@ -8,18 +8,18 @@ import java.security.MessageDigest;
  */
 public class CheckSumBuilder {
     // 计算并获取CheckSum
-    public static String getCheckSum(String appSecret, String nonce, String curTime) {
-        return encode("sha1", appSecret + nonce + curTime);
-    }
+public static String getCheckSum(String appSecret, String nonce, String curTime) {
+    return encode("sha1", appSecret + nonce + curTime);
+}
 
-    // 计算并获取md5值
-    public static String getMD5(String requestBody) {
-        return encode("md5", requestBody);
-    }
+// 计算并获取md5值
+public static String getMD5(String requestBody) {
+    return encode("md5", requestBody);
+}
 
-    private static String encode(String algorithm, String value) {
-        if (value == null) {
-            return null;
+private static String encode(String algorithm, String value) {
+    if (value == null) {
+        return null;
         }
         try {
             MessageDigest messageDigest
